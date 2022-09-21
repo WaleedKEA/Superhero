@@ -10,7 +10,7 @@ public class UserInterface {
         System.out.println("------------------------------------");
         System.out.println("VELKOMMEN TIL SUPERHELTE PROGRAMMET!");
         System.out.println("------------------------------------");
-        System.out.println("Du har nu følgende valgmuligheder: \n");
+        System.out.println("Du har nu følgende valgmuligheder:");
 
     }
 
@@ -19,9 +19,10 @@ public class UserInterface {
 
         do {
             System.out.println("1. Opret superhelt");
-            System.out.println("3. Søg i databasen");
-            System.out.println("5. Se listen af superhelte");
-            System.out.println("9. Afslut");
+            System.out.println("2. Søg i databasen");
+            System.out.println("3. Se listen af superhelte");
+            System.out.println("9. Afslut\n");
+            System.out.println("Indtast nummer: ");
             menuvalg = scanner.nextInt();
             scanner.nextLine();
 
@@ -64,7 +65,7 @@ public class UserInterface {
                 System.out.println("Superhelt er nu oprettet\n");
                 database.createSuperhero(navn, rigtigNavn, superkræft, powerlevel, opdagelsesÅr);
             }
-            if (menuvalg == 3) {
+            if (menuvalg == 2) {
 
                 Superhero fundet = null;
                 boolean error = false;
@@ -109,7 +110,7 @@ public class UserInterface {
                 else
                     fundet.setOpdagelsesår(fundet.getOpdagelsesår());
             }
-            if (menuvalg == 5) {
+            if (menuvalg == 3) {
                 for (Superhero superhero : database.getSuperheroes()) {
                     System.out.println("Superheltens navn: " + superhero.getSuperheltNavn());
                     System.out.println("Superheltens rigtige navn: " + superhero.getRigtigenavn());
