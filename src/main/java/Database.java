@@ -5,6 +5,10 @@ public class Database {
 
     private ArrayList<Superhero> superheroes = new ArrayList<>();
 
+    public void createTestData() {
+
+    }
+
     public void createSuperhero(String superheltnavn, String rigtigenavn,
                                 String superkræft, double powerlevel, int opdagelsesår) {
 
@@ -32,4 +36,10 @@ public class Database {
         System.out.println("Ikke muligt at finde superhelt: ");
         return null;
     }
+    public boolean deleteSuperhero(Superhero superhero) {
+        boolean success = true;
+        superheroes.remove(superhero);
+        return success;
+    }
 }
+

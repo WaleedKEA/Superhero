@@ -21,7 +21,8 @@ public class UserInterface {
             System.out.println("1. Opret superhelt");
             System.out.println("2. Søg i databasen");
             System.out.println("3. Se listen af superhelte");
-            System.out.println("9. Afslut\n");
+            System.out.println("4. Slet en superhelt ");
+            System.out.println("5. Afslut\n");
             System.out.println("Indtast nummer: ");
             menuvalg = scanner.nextInt();
             scanner.nextLine();
@@ -118,12 +119,32 @@ public class UserInterface {
                     System.out.println("Powerevel: " + superhero.getPowerlevel());
                     System.out.println("Opdagelsesår: " + superhero.getOpdagelsesår());
                     System.out.println(" ");
-
                 }
             }
-            else if (menuvalg == 9) ;
+            if (menuvalg == 4) {
+                System.out.println("Slet en superhelt ");
+                Superhero fundet = null;
+                boolean error = false;
+                do {
+                    error = false;
+                    System.out.println("Søg efter superhelt: ");
+                    String søgning = scanner.nextLine();
+                    fundet = database.searchForSuperhero(søgning);
+                    if (fundet != null) {
+                        System.out.println("Fundet superhelt:  ");
+                    } else {
+                        System.out.println("Kunne ikke finde superhelt ");
+                        error = true;
+                    }
 
-        } while (menuvalg != 9);
+                } while (error);
+                database.deleteSuperhero(fundet);
+                System.out.println("Sletning af superhelt succesfuldt. \n");
+            }
+
+            else if (menuvalg == 5) ;
+
+        } while (menuvalg != 5);
         System.out.println("Tak for at bruge programmet! ");
     }
 
