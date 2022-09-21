@@ -131,7 +131,7 @@ public class UserInterface {
                     String søgning = scanner.nextLine();
                     fundet = database.searchForSuperhero(søgning);
                     if (fundet != null) {
-                        System.out.println("Fundet superhelt:  ");
+                        //System.out.println("Fundet superhelt:  ");
                     } else {
                         System.out.println("Kunne ikke finde superhelt ");
                         error = true;
@@ -145,6 +145,7 @@ public class UserInterface {
             else if (menuvalg == 5) ;
 
         } while (menuvalg != 5);
+        System.out.println("Program afsluttet.");
         System.out.println("Tak for at bruge programmet! ");
     }
 
